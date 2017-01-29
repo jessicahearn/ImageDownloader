@@ -7,5 +7,5 @@ unless ARGV[0].nil?
 
   puts "Download complete!"
 else
-	puts "Please provide a file of image urls."
+  puts "Please provide a file of image urls."
 end

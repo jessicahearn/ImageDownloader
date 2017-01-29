@@ -2,7 +2,7 @@ class ImageDownloadService
   require 'open-uri'
 
   def initialize(input)
-    @input = input
+    @input = validate_input_file(input)
     @destination_path = File.join(File.dirname(__FILE__), '../assets/images/')
   end
 
@@ -17,6 +17,14 @@ class ImageDownloadService
   end
 
   private
+
+    def validate_input_file(input)
+      if File.extname(input)=='.txt'
+        return input
+      else
+        raise "Invalid input - please provide a .txt file"
+      end
+    end
 
     def url_is_valid(url)
       URI::parse(url)
