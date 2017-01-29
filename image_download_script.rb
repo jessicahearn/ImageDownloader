@@ -2,8 +2,8 @@ unless ARGV[0].nil?
   puts "Downloading images..." 
 
   require_relative 'app/services/ImageDownloadService'
-  other_downloader = ImageDownloadService.new(ARGV[0])
-  other_downloader.download_and_save
+  downloader = ImageDownloadService.new(ARGV[0])
+  downloader.download_and_save
 
   puts "Download complete!"
 else
